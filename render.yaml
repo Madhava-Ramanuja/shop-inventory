@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: shop-inventory-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: DB_HOST
+        value: mysql.railway.internal
+      - key: DB_PASSWORD
+        value: wEPOFWSbyQvPUpbtnhfJXGMDfrSffvao
+      - key: DB_NAME
+        value: railway
